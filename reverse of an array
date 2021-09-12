@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+// *****************reversing the elements of array*****************
+// approach 1- using function
+void reverse(int arr[], int n){
+    int i=0, j=n-1, temp;
+    while (i<j)
+    {
+        temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+        i++;
+        j--;
+    }
+}
+int main(){
+    int arr[10], n;
+    cout<<"enter the size of array"<<endl;
+    cin>>n;
+    cout<<"enter the variables"<<endl;
+    for (int i = 0; i < n; i++)
+    {
+        cin>>arr[i];
+    }
+    reverse(arr, n);
+    for (int i = 0; i < n; i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
+// approach 2-without using functions
+int main(){
+    int n;
+    cout<<"enter the size of array"<<endl;
+    cin>>n;
+    int arr[n], arr1[n];
+    cout<<"enter the variables"<<endl;
+    for (int i = 0; i < n; i++)
+    {
+        cin>>arr[i];
+        arr1[(n-1)-i]=arr[i];
+    }
+      for (int i = 0; i < n; i++)
+    {
+        cout<<arr1[i]<<" ";
+    }
+    return 0;
+}
